@@ -15,6 +15,7 @@ public class MessageSocketController {
 
     @MessageMapping("/send/message")
     public void sendMessage(SendMessageRequest sendMessageRequest) {
+
     }
     @MessageMapping("/receive/message")
     public void receiveMessage() {

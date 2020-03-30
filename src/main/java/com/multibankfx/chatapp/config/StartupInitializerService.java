@@ -20,8 +20,7 @@ public class StartupInitializerService {
 
     public void initializeHazelcast() {
         hazelcastConfig = new ClientConfig();
-        //config.getSerializationConfig().addPortableFactory(2, new MT4PortableFactory());
-        //config.getSerializationConfig().addDataSerializableFactory(3, new MT4DataSerializableFactory());
+
         hazelcastConfig.getNetworkConfig().setConnectionAttemptLimit(0);
         hazelcastConfig.getConnectionStrategyConfig().setAsyncStart(false);
         hazelcastConfig.getNetworkConfig().addAddress(hazelcastUri);
@@ -29,5 +28,7 @@ public class StartupInitializerService {
         hazelcastClientStateListener = new ClientStateListener(hazelcastConfig);
         hazelcastClient = HazelcastClient.newHazelcastClient(hazelcastConfig);
     }
+
+
 
 }
